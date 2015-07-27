@@ -13,13 +13,13 @@ Example broadcast
 -----------------------
 ```php
 $apiKey = "YOUR GOOGLE API SERVER KEY";
-$devices = array('YOUR REGISTERED DEVICE ID');
+$devices = array("YOUR REGISTERED DEVICE ID");
 
-$title = "The title to send"
+$title = "The title to send";
 $message = "The message to send";
 
 $gcpm = new GCMPushMessage($apiKey);
-$response = $gcpm->send($message, array('title' => $title));
+$response = $gcpm->send($message, array("title" => $title));
 ```
 
 Example usage
