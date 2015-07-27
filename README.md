@@ -9,6 +9,19 @@ http://developer.android.com/guide/google/gcm/index.html
 Based on the code available at:
 http://stackoverflow.com/questions/11242743/gcm-with-php-google-cloud-messaging
 
+Example broadcast
+-----------------------
+```php
+$apiKey = "YOUR GOOGLE API SERVER KEY";
+$devices = array('YOUR REGISTERED DEVICE ID');
+
+$title = "The title to send"
+$message = "The message to send";
+
+$gcpm = new GCMPushMessage($apiKey);
+$response = $gcpm->send($message, array('title' => $title));
+```
+
 Example usage
 -----------------------
 ```php
