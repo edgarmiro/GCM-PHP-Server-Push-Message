@@ -1,5 +1,6 @@
 <?
-
+    include "GCMPushMessage.php";
+    
     $apiKey = "YOUR GOOGLE API SERVER KEY";
     $devices = array("YOUR REGISTERED DEVICE ID");
 
