@@ -13,7 +13,8 @@
 	$devices An array or string of registered device tokens
 	$message The mesasge you want to push out
 
-	@author Matt Grundy
+    @author Edgar Miró
+	@original_author Matt Grundy (https://github.com/mattg888/GCM-PHP-Server-Push-Message)    
 
 	Adapted from the code available at:
 	http://stackoverflow.com/questions/11242743/gcm-with-php-google-cloud-messaging
