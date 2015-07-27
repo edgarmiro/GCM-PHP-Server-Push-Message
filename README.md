@@ -13,7 +13,6 @@ Example broadcast
 -----------------------
 ```php
 $apiKey = "YOUR GOOGLE API SERVER KEY";
-$devices = array("YOUR REGISTERED DEVICE ID");
 
 $title = "The title to send";
 $message = "The message to send";
@@ -22,16 +21,18 @@ $gcpm = new GCMPushMessage($apiKey);
 $response = $gcpm->send($message, array("title" => $title));
 ```
 
-Example usage
+Example registered devices
 -----------------------
 ```php
 $apiKey = "YOUR GOOGLE API SERVER KEY";
 $devices = array('YOUR REGISTERED DEVICE ID');
+
+$title = "The title to send";
 $message = "The message to send";
 
 $gcpm = new GCMPushMessage($apiKey);
 $gcpm->setDevices($devices);
-$response = $gcpm->send($message, array('title' => 'Test title'));
+$response = $gcpm->send($message, array("title" => $title));
 ```
 
 How to obtain a Google Server API Key

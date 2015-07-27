@@ -1,6 +1,6 @@
 <?
-    include "GCMPushMessage.php";
-    
+    include "../GCMPushMessage.php";
+
     $apiKey = "YOUR GOOGLE API SERVER KEY";
     $devices = array("YOUR REGISTERED DEVICE ID");
 
@@ -8,7 +8,7 @@
     $message = "The message to send";
 
     $gcpm = new GCMPushMessage($apiKey);
-    // $gcpm->setDevices($devices); // Don't set devices to send a broadcast
+    $gcpm->setDevices($devices);
     $response = $gcpm->send($message, array("title" => $title));
 
 ?>
