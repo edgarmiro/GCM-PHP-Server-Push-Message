@@ -54,18 +54,21 @@ class GCMPushMessage {
 	*/
 	function send($message, $data = false){
 		
-		if(!is_array($this->devices) || count($this->devices) == 0){
-			$this->error("No devices set");
-		}
-		
 		if(strlen($this->serverApiKey) < 8){
 			$this->error("Server API Key not set");
 		}
-		
-		$fields = array(
-			'registration_ids'  => $this->devices,
-			'data'              => array( "message" => $message ),
-		);
+
+		if(!is_array($this->devices) || count($this->devices) == 0){
+			$fields = array(
+				'to'    => "/topics/global",
+				'data'  => array( "message" => $message ),
+			);
+		} else {		
+			$fields = array(
+				'registration_ids'  => $this->devices,
+				'data'              => array( "message" => $message ),
+			);
+		}
 		
 		if(is_array($data)){
 			foreach ($data as $key => $value) {
